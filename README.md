@@ -48,6 +48,10 @@ More details about each of the Rules can be found on the [wiki page](https://git
 | ---- | ----------- |
 | [`DJ10`](https://github.com/rocioar/flake8-django/wiki/%5BDJ10%5D-Model-should-define-verbose_name-on-its-Meta-inner-class) | Model should define verbose_name on its Meta inner class |
 | [`DJ11`](https://github.com/rocioar/flake8-django/wiki/%5BDJ11%5D-Model-should-define-verbose_name_plural-on-its-Meta-inner-class) | Model should define verbose_name_plural on its Meta inner class |
+| [`DJ21`](#) | Pass the model name as a string on relationship fields |
+| [`DJ22`](#) | Use get_user_model() instead of models.User on relationship fields |
+
+
 
 To enable optional rules you can use the `--select` parameter. It's default values are: E,F,W,C90.
 

@@ -7,12 +7,13 @@ import astroid
 from flake8_django.checkers import (DecoratorChecker, ModelContentOrderChecker,
                                     ModelDunderStrMissingChecker,
                                     ModelFieldChecker, ModelFormChecker,
-                                    ModelMetaChecker, RenderChecker)
+                                    ModelMetaChecker, RenderChecker,
+                                    ModelRelationshipFieldChecker)
 
 __version__ = '1.1.5'
 
 
-CHECKS_DISABLED_BY_DEFAULT = ['DJ10', 'DJ11']
+CHECKS_DISABLED_BY_DEFAULT = ['DJ10', 'DJ11', 'DJ21', 'DJ22']
 
 
 class DjangoStyleFinder(ast.NodeVisitor):
@@ -23,6 +24,7 @@ class DjangoStyleFinder(ast.NodeVisitor):
         'Call': [
             ModelFieldChecker(),
             RenderChecker(),
+            ModelRelationshipFieldChecker(),
         ],
         'FunctionDef': [
             DecoratorChecker(),
